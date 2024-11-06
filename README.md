@@ -28,13 +28,22 @@ cd DBMiddleware
 在项目目录下找到 config.json.example 配置文件，将其复制为 config.json，并根据需要修改内容：
 ```json
 {
-  "database": {
-    "host": "localhost",
-    "port": 5432,
-    "user": "username",
-    "password": "password",
-    "dbname": "your_db"
-  }
+    "databases": {
+        "db1": {
+             "host": "your_mysql_host1",
+            "user": "your_mysql_user1",
+            "password": "your_mysql_password1",
+            "database": "your_mysql_database1",
+            "api_keys": ["api_key_1", "api_key_2"]
+        },
+        "db2": {
+            "host": "your_mysql_host2",
+            "user": "your_mysql_user2",
+            "password": "your_mysql_password2",
+            "database": "your_mysql_database2",
+            "api_keys": ["api_key_3", "api_key_4"]
+        }
+    }
 }
 ```
 
@@ -42,9 +51,10 @@ cd DBMiddleware
 项目包含了 Dockerfile 和 docker-compose.yml 文件，方便通过 Docker 部署。
 
 1.	构建并运行 Docker 容器：
-```bash
-docker-compose up -d
-```
+
+  ```bash
+  docker-compose up -d
+  ```
 
 2. docker-compose up -d
 
